@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckboxControlValueAccessor, FormControl } from '@angular/forms';
-import { type } from 'os';
 
 @Component({
   selector: 'app-pos-form',
