@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col" *ngIf="addCart">No</th>
+                    <th scope="col">Products</th>
+                    <th scope="col" *ngIf="addCart">Add to Cart</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let items of items">
+                    <td *ngIf="addCart">{{ items.id }}</td>
+                    <td>{{ items.items }}</td>
+                    <!-- //<td>{{items.select}}</td> -->
+                    <td *ngIf="addCart"><input class="form-check-input" type="checkbox" id="items.id"
+                            [(ngModel)]="items.select" (change)="cal()" />
+                    </td>
+                    <td>{{ items.price }}</td>
+                </tr>
+                <tr>
+                    <td *ngIf="addCart"></td>
+                    <td></td>
+                    <td *ngIf="addCart"></td>
+                    <td>
+                        <h3 name="total" id="grandtotal">Total: {{totalData}}</h3>
+                        <button type="button" [hidden]="printVisible" (click)="printPreview()">Print Preview</button>
+                        <button type="button" *ngIf="printVisible" (click)="print()">Print</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
